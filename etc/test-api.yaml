@@ -1,0 +1,12 @@
+Name: test-api
+Host: 0.0.0.0
+Port: 8888
+
+# 数据库配置
+DataSource: root:root@tcp(127.0.0.1:3306)/hh_overseas?parseTime=true
+
+# Redis 缓存配置（可选）
+Cache:
+  - Host: 127.0.0.1:6379
+    Pass:
+    Type: node

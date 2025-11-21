@@ -1,0 +1,64 @@
+syntax = "v1"
+
+info (
+	title:  "test"
+	desc:   "test api"
+	author: "xunmi"
+	email:  "1102319233@qq.com"
+)
+
+type GetUserRequest {
+	Id int64 `path:"userId"`
+}
+
+type GetUserResponse {
+	UserName string `json:"user_name"`
+	Account  string `json:"account"`
+	Status   int    `json:"status"`
+}
+
+type CreateUserRequest {
+	UserName string `json:"user_name"`
+	Account  string `json:"account"`
+	Status   int    `json:"status"`
+}
+
+type CreateUserResponse {
+	Result bool `json:"result"`
+}
+
+type GetRoleRequest {
+	Id int64 `path:"roleId"`
+}
+
+type GetRoleResponse {
+	RoleName string `json:"role_name"`
+	Desc     string `json:"desc"`
+	Status   int    `json:"status"`
+	IsSuper  int    `json:"is_super"`
+}
+
+type CreateRoleRequest {
+	RoleName string `json:"role_name"`
+	Desc     string `json:"desc"`
+	Status   int    `json:"status"`
+}
+
+type CreateRoleResponse {
+	Result bool `json:"result"`
+}
+
+service admin-api {
+	@handler GetUser
+	get /users/id/:userId (GetUserRequest) returns (GetUserResponse)
+
+	@handler CreateUser
+	post /users/create (CreateUserRequest) returns (CreateUserResponse)
+
+	@handler GetRole
+	get /roles/id/:roleId (GetRoleRequest) returns (GetRoleResponse)
+
+	@handler CreateRole
+	post /roles/create (CreateRoleRequest)
+}
+
