@@ -22,7 +22,7 @@ info (
 	title:  "test"
 	desc:   "test api"
 	author: "xunmi"
-	email:  "1102319233@qq.com"
+	email:  "hidden@qq.com"
 )
 
 type GetUserRequest {
