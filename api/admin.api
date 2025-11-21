@@ -3,8 +3,8 @@ syntax = "v1"
 info (
 	title:  "test"
 	desc:   "test api"
-	author: "xunmi"
-	email:  "hidden@qq.com"
+	author: "your name"
+	email:  "your email"
 )
 
 type GetUserRequest {
