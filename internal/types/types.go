@@ -6,7 +6,8 @@ package types
 type CreateRoleRequest struct {
 	RoleName string `json:"role_name"`
 	Desc     string `json:"desc"`
-	Status   int    `json:"status"`
+	Status   int64   `json:"status"`
+	IsSuper  int64  `json:"is_super"`
 }
 
 type CreateRoleResponse struct {
@@ -16,7 +17,8 @@ type CreateRoleResponse struct {
 type CreateUserRequest struct {
 	UserName string `json:"user_name"`
 	Account  string `json:"account"`
-	Status   int    `json:"status"`
+	Status   int64   `json:"status"`
+	Password string `json:"password"`
 }
 
 type CreateUserResponse struct {
@@ -30,8 +32,8 @@ type GetRoleRequest struct {
 type GetRoleResponse struct {
 	RoleName string `json:"role_name"`
 	Desc     string `json:"desc"`
-	Status   int    `json:"status"`
-	IsSuper  int    `json:"is_super"`
+	Status   int64  `json:"status"`
+	IsSuper  int64  `json:"is_super"`
 }
 
 type GetUserRequest struct {
@@ -41,5 +43,6 @@ type GetUserRequest struct {
 type GetUserResponse struct {
 	UserName string `json:"user_name"`
 	Account  string `json:"account"`
-	Status   int    `json:"status"`
+	Status   int64  `json:"status"`
+	IsSuper  int64  `json:"is_super"`
 }

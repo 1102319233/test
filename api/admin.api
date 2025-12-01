@@ -20,6 +20,7 @@ type GetUserResponse {
 type CreateUserRequest {
 	UserName string `json:"user_name"`
 	Account  string `json:"account"`
+    Password string `json:"password"`
 	Status   int    `json:"status"`
 }
 
@@ -34,14 +35,15 @@ type GetRoleRequest {
 type GetRoleResponse {
 	RoleName string `json:"role_name"`
 	Desc     string `json:"desc"`
-	Status   int    `json:"status"`
-	IsSuper  int    `json:"is_super"`
+	Status   int64   `json:"status"`
+	IsSuper  int64   `json:"is_super"`
 }
 
 type CreateRoleRequest {
 	RoleName string `json:"role_name"`
 	Desc     string `json:"desc"`
-	Status   int    `json:"status"`
+	Status   int64  `json:"status"`
+	IsSuper  int64  `json:"is_super"`
 }
 
 type CreateRoleResponse {

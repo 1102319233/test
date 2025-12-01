@@ -31,7 +31,8 @@ func (l *CreateUserLogic) CreateUser(req *types.CreateUserRequest) (resp *types.
 	_, err = l.svcCtx.AdminUsersModel.Insert(l.ctx, &admin_users.AdminUsers{
 		UserName: req.UserName,
 		Account:  req.Account,
-		Status:   int64(req.Status),
+		Status:   req.Status,
+		Password: req.Password,
 	})
 	if err != nil {
 		return nil, err

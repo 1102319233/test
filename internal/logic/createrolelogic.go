@@ -5,6 +5,7 @@ package logic
 
 import (
 	"context"
+	"test/model/admin_role"
 
 	"test/internal/svc"
 	"test/internal/types"
@@ -26,8 +27,17 @@ func NewCreateRoleLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Create
 	}
 }
 
-func (l *CreateRoleLogic) CreateRole(req *types.CreateRoleRequest) error {
-	// todo: add your logic here and delete this line
-
-	return nil
+func (l *CreateRoleLogic) CreateRole(req *types.CreateRoleRequest) (resp *types.CreateRoleResponse, err error) {
+	_, err = l.svcCtx.AdminRoleModel.Insert(l.ctx, &admin_role.AdminRole{
+		RoleName: req.RoleName,
+		Desc:     req.Desc,
+		Status:   req.Status,
+		IsSuper:  req.IsSuper,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.CreateRoleResponse{
+		Result: true,
+	}, nil
 }

@@ -34,6 +34,6 @@ func (l *GetUserLogic) GetUser(req *types.GetUserRequest) (resp *types.GetUserRe
 	return &types.GetUserResponse{
 		UserName: user.UserName,
 		Account:  user.Account,
-		Status:   int(user.Status),
+		Status:   user.Status,
 	}, nil
 }

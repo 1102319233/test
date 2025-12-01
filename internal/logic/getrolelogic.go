@@ -36,7 +36,7 @@ func (l *GetRoleLogic) GetRole(req *types.GetRoleRequest) (resp *types.GetRoleRe
 	return &types.GetRoleResponse{
 		RoleName: role.RoleName,
 		Desc:     role.Desc,
-		IsSuper:  int(role.IsSuper),
-		Status:   int(role.Status),
+		IsSuper:  role.IsSuper,
+		Status:   role.Status,
 	}, nil
 }

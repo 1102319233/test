@@ -44,7 +44,7 @@ type (
 		Id            uint64         `db:"id"`
 		UserName      string         `db:"user_name"`     // 名称
 		Account       string         `db:"account"`       // 登录邮箱
-		Password      sql.NullString `db:"password"`      // 密码
+		Password      string		 `db:"password"`      // 密码
 		Status        int64          `db:"status"`        // 1正常  2冻结
 		WecomPhone    string         `db:"wecom_phone"`   // 企微手机号
 		WecomUserId   string         `db:"wecom_user_id"` // 企业微信userid
