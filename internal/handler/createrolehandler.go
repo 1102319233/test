@@ -22,7 +22,7 @@ func CreateRoleHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 		}
 
 		l := logic.NewCreateRoleLogic(r.Context(), svcCtx)
-		err := l.CreateRole(&req)
+		_, err := l.CreateRole(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {
